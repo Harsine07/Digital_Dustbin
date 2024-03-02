@@ -1,27 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap');
 .app {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2rem;
+  justify-content: space-between;
 }
 
+.navbar {
+  background-color:#07263b;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.nav-logo {
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+  border-top: 2px solid #fff; /* Add a top border with white color */
+  border-bottom: 2px solid #fff; /* Add a bottom border with white color */
+  padding: 10px;
+  width:24%;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: 100px;
+}
+.logo-image{
+  width: 38px; /* Set your desired width */
+  height: 52px;
+  width:52px;
+  padding: 2px;
+}
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-right: 30px;
+  padding: 15px;
+  font-size: 20px;
+  font-family: 'Quattrocento Sans'
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ccc;
+}
 .header {
-  text-align: center;
+  text-align: left;
+  margin-right: 800px;
+  margin-top: 100px;
+}
+
+.container {
+  position: absolute;
+  top: 150px; 
+  right: 100px;
+  background-color: white;
+  border: 3px solid #ccc;
+  border-radius: 15px; /* Adjust the curve as needed */
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 300px; /* Adjust the width as needed */
+  height: 200px; /* Adjust the height as needed */ /* Add shadow for depth */
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  width: 30rem;
   gap: 1rem;
 }
 
 .form input {
   padding: 0.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid #ccc; /* Border for input fields */
   border-radius: 4px;
 }
 
-.footer {
-  margin-top: 2rem;
+.form input::placeholder {
+  color: #000; /* Placeholder text color */
 }
+.submit-button {
+  background-color: black;
+  color: white;
+  padding: 0.7rem 1rem; /* Adjust padding as needed */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.carousel {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  margin-top: 125px; 
+}
+.carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 1;
+  transition: background-color 0.3s;
+}
+.carousel__btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.carousel__btn--prev {
+  left: 0;
+}
+.carousel__btn--next {
+  right: 0;
+}
+.carousel__img {
+  width: 1300px;
+  height: 470px; /* Set a fixed height for all images */
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+.carousel__img:hover {
+  transform: scale(1.05);
+}
+

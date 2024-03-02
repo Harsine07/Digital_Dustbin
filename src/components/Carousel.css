@@ -1,0 +1,24 @@
+/* Carousel.css */
+.carousel__content {
+    position: relative;
+  }
+  
+  .carousel__img {
+    width: 1300px;
+    height: 450px; /* Set a fixed height for all images */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .carousel__caption {
+    position: absolute;
+    bottom: 1px; /* Adjust the distance from the bottom as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.5rem; /* Adjust the font size as needed */
+    color: white; /* Adjust the text color as needed */
+  }
+  
