@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-<<<<<<< HEAD
-=======
 import { useNavigate } from 'react-router-dom';
->>>>>>> cc8a7574fc47af11503bc63a90aa50fa8ea3c64a
 import './CustomerLogin.css';
 import user_icon from '../components/Assets/person.png';
 import email_icon from '../components/Assets/email.png';
@@ -12,21 +9,6 @@ import eyeSlash_icon from '../components/Assets/hide.png';
 
 const CustomerLogin = () => {
   const [action, setAction] = useState('Login');
-<<<<<<< HEAD
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [loginMessage, setLoginMessage] = useState('');
-  const [showModal, setShowModal] = useState(false);
-
-  const handleLogin = () => {
-    // For demonstration purposes, using hardcoded credentials
-    const correctEmail = 'haris.22aim@kongu.edu';
-    const correctPassword = 'admin@123';
-
-    if (email === correctEmail && password === correctPassword) {
-=======
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -38,16 +20,10 @@ const CustomerLogin = () => {
 
   const handleLogin = () => {
     if (action === 'Login' && email === 'Mendal' && password === 'admin@123') {
->>>>>>> cc8a7574fc47af11503bc63a90aa50fa8ea3c64a
       setLoginMessage('Login successful!');
       setShowModal(true);
       setTimeout(() => {
         setShowModal(false);
-<<<<<<< HEAD
-        setLoginMessage(''); 
-      }, 2000);
-      
-=======
         setLoginMessage('');
         navigate('/another-page');
       }, 2000);
@@ -58,24 +34,15 @@ const CustomerLogin = () => {
         setShowModal(false);
         setLoginMessage('');
       }, 2000);
->>>>>>> cc8a7574fc47af11503bc63a90aa50fa8ea3c64a
     } else {
       setLoginMessage('Incorrect email or password. Please try again.');
       setShowModal(true);
       setTimeout(() => {
         setShowModal(false);
-<<<<<<< HEAD
-        setLoginMessage(''); 
-      }, 2000);
-    }
-  };
-    
-=======
         setLoginMessage('');
       }, 2000);
     }
   };
->>>>>>> cc8a7574fc47af11503bc63a90aa50fa8ea3c64a
 
   const closePopup = () => {
     setShowModal(false);
@@ -187,4 +154,3 @@ const CustomerLogin = () => {
 };
 
 export default CustomerLogin;
-
