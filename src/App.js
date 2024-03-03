@@ -6,6 +6,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Carousel from './components/Header';
 import CustomerLogin from './components/CustomerLogin';
+import RecyclerLogin from './components/RecyclerLogin';
 
 const App = () => {
   const carouselImages = [
@@ -26,6 +27,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/customerlogin" element={<CustomerLogin />} />
+          <Route path='/RecyclerLogin' element={<RecyclerLogin />} />
           <Route path="/" element={<Carousel images={carouselImages} captions={carouselCaptions} />} />
         </Routes>
       </div>

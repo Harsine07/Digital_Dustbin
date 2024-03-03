@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+<<<<<<< HEAD
+=======
+import { useNavigate } from 'react-router-dom';
+>>>>>>> cc8a7574fc47af11503bc63a90aa50fa8ea3c64a
 import './CustomerLogin.css';
 import user_icon from '../components/Assets/person.png';
 import email_icon from '../components/Assets/email.png';
@@ -8,6 +12,7 @@ import eyeSlash_icon from '../components/Assets/hide.png';
 
 const CustomerLogin = () => {
   const [action, setAction] = useState('Login');
+<<<<<<< HEAD
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [email, setEmail] = useState('');
@@ -21,23 +26,56 @@ const CustomerLogin = () => {
     const correctPassword = 'admin@123';
 
     if (email === correctEmail && password === correctPassword) {
+=======
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [loginMessage, setLoginMessage] = useState('');
+
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    if (action === 'Login' && email === 'Mendal' && password === 'admin@123') {
+>>>>>>> cc8a7574fc47af11503bc63a90aa50fa8ea3c64a
       setLoginMessage('Login successful!');
       setShowModal(true);
       setTimeout(() => {
         setShowModal(false);
+<<<<<<< HEAD
         setLoginMessage(''); 
       }, 2000);
       
+=======
+        setLoginMessage('');
+        navigate('/another-page');
+      }, 2000);
+    } else if (action === 'Register' && email && password) {
+      setLoginMessage('Registration successful!');
+      setShowModal(true);
+      setTimeout(() => {
+        setShowModal(false);
+        setLoginMessage('');
+      }, 2000);
+>>>>>>> cc8a7574fc47af11503bc63a90aa50fa8ea3c64a
     } else {
       setLoginMessage('Incorrect email or password. Please try again.');
       setShowModal(true);
       setTimeout(() => {
         setShowModal(false);
+<<<<<<< HEAD
         setLoginMessage(''); 
       }, 2000);
     }
   };
     
+=======
+        setLoginMessage('');
+      }, 2000);
+    }
+  };
+>>>>>>> cc8a7574fc47af11503bc63a90aa50fa8ea3c64a
 
   const closePopup = () => {
     setShowModal(false);
