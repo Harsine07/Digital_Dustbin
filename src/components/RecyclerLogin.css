@@ -1,42 +1,53 @@
-.container{
-    display:flex;
+/* RecyclerLogin.css */
+
+.container {
+    display: flex;
     flex-direction: column;
     margin: auto;
     margin-top: 200px;
     background: #fff;
     padding-bottom: 30px;
-}
-
-.header{
+  }
+  
+  .header {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 9px;
     width: 100%;
     margin-top: 30px;
-}
-
-.text{
+  }
+  
+  .text {
     color: #3c009d;
     font-size: 48px;
     font-weight: 700;
-
-}
-
-.underline{
-    width: 61px;
-    height: 6px;
+    align-items: center;
+  }
+  
+  .underline {
+    display: flex;
+    width: 72px;
+    height: 5px;
     background: #3c009d;
     border-radius: 9px;
-
-}
-.inputs{
+  }
+  
+  .underline-1 {
+    display: flex;
+    width: 72px;
+    height: 5px;
+    background: #3c009d;
+    border-radius: 9px;
+  }
+  
+  .inputs {
     margin-top: 55px;
     display: flex;
     flex-direction: column;
-    gap:25px;
-}
-.input{
+    gap: 25px;
+  }
+  
+  .input {
     display: flex;
     align-items: center;
     margin: auto;
@@ -44,15 +55,13 @@
     height: 80px;
     background: #eaeaea;
     border-radius: 6px;
-}
-
-.input img{
+  }
+  
+  .input img {
     margin: 0px 30px;
-
-}
-
-
-.input input{
+  }
+  
+  .input input {
     height: 50px;
     width: 400px;
     background: transparent;
@@ -60,27 +69,27 @@
     outline: none;
     color: #797979;
     font-size: 19px;
-}
-
-.forgot-password{
+  }
+  
+  .forgot-password {
     padding-left: 350px;
     margin-top: 27px;
     color: #797979;
     font-size: 18px;
-}
-
-.forgot-password span{
-    color:#4c00b4;
+  }
+  
+  .forgot-password span {
+    color: #4c00b4;
     cursor: pointer;
-
-}
-.submit-container{
+  }
+  
+  .submit-container {
     display: flex;
-    gap:30px;
+    gap: 30px;
     margin: 60px auto;
-}
-
-.submit{
+  }
+  
+  .submit {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,43 +101,30 @@
     font-size: 19px;
     font-weight: 700;
     cursor: pointer;
-}
-
-.gray{
+  }
+  
+  .gray {
     background: #eaeaea;
     color: #676767;
-
-}
-.small-icon {
-    width: 20px; /* Adjust the width as needed */
-    height: 20px; /* Adjust the height as needed */
-    margin-right: 10px; /* Optional: Add margin to adjust spacing */
-  }
-
-/* Add this to CustomerLogin.css or your existing CSS file */
-.modal {
-    display: flex;
-    position: fixed;
-    top: 0px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.5);
   }
   
-  .modal-content {
-    background: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px 0px #000;
+  .small-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
   }
   
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
+  .button.active {
+    background-color: #3c009d; /* Adjust active button background color */
+    color: #ffffff; /* Adjust active button text color */
+  }
+  
+  .button {
+    background-color: transparent;
+    color: #3c009d;
+    border: none;
     cursor: pointer;
+    font-size: 40px;
+    font-weight: 700;
   }
+  

@@ -1,93 +1,116 @@
 import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import email_icon from '../components/Assets/email.png';
+import password_icon from '../components/Assets/password.png';
+//import eye_open from '../components/Assets/view.png';
+//import eye_close from '../components/Assets/hide.png';
+import './RecyclerLogin.css';
 
 const RecyclerLogin = () => {
-  const { register, handleSubmit, getValues } = useForm();
-  const [accountTypeError, setAccountTypeError] = useState('');
-  const [emailError, setEmailError] = useState('');
-  const [passwordError, setPasswordError] = useState('');
-  const [selectedAccountType, setSelectedAccountType] = useState('doctor');
+  const [isAdminLogin, setIsAdminLogin] = useState(true);
+  const [adminEmail, setAdminEmail] = useState('');
+  const [adminPassword, setAdminPassword] = useState('');
+  const [recyclerEmail, setRecyclerEmail] = useState('');
+  const [recyclerPassword, setRecyclerPassword] = useState('');
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const toggleLogin = (isAdmin) => {
+    setIsAdminLogin(isAdmin);
   };
 
-  const validateForm = () => {
-    let isValid = true;
-    const formData = getValues();
+  const handleAdminEmailChange = (event) => {
+    setAdminEmail(event.target.value);
+  };
 
-    if (!formData.email || !/^\S+@\S+$/i.test(formData.email)) {
-      setEmailError('Email is required and should be a valid email address');
-      isValid = false;
+  const handleAdminPasswordChange = (event) => {
+    setAdminPassword(event.target.value);
+  };
+
+  const handleRecyclerEmailChange = (event) => {
+    setRecyclerEmail(event.target.value);
+  };
+
+  const handleRecyclerPasswordChange = (event) => {
+    setRecyclerPassword(event.target.value);
+  };
+
+  const handleSubmit = () => {
+    // Handle login submission logic here
+    if (isAdminLogin) {
+      console.log('Admin Login:', adminEmail, adminPassword);
+      // Add logic to handle admin login
     } else {
-      setEmailError('');
+      console.log('Recycler Login:', recyclerEmail, recyclerPassword);
+      // Add logic to handle recycler login
     }
-
-    if (!formData.password || formData.password.length < 6) {
-      setPasswordError('Password is required and should be at least 6 characters long');
-      isValid = false;
-    } else {
-      setPasswordError('');
-    }
-
-    return isValid;
-  };
-
-  const onSubmitForm = (event) => {
-    event.preventDefault();
-
-    if (validateForm()) {
-      handleSubmit(onSubmit)();
-    }
-  };
-
-  const handleAccountTypeChange = (event) => {
-    setAccountTypeError('');
-    setSelectedAccountType(event.target.value);
   };
 
   return (
-    <div className="login-page">
-      <h1>Email</h1>
-      <div className="form-group">
-        <label htmlFor="accountType">Choose Account Type:</label>
-        <select name="accountType" value={selectedAccountType} onChange={handleAccountTypeChange}>
-          <option value="doctor">Doctor</option>
-          <option value="patient">Patient</option>
-        </select>
-        {accountTypeError && (
-          <p className="error">{accountTypeError}</p>
+    <div className="container">
+      <div className="header">
+        <div className="text">
+          <button className={`button ${isAdminLogin ? 'active' : ''}`} onClick={() => toggleLogin(true)}>
+            Admin Login
+          </button>
+          <button className={`button ${!isAdminLogin ? 'active' : ''}`} onClick={() => toggleLogin(false)}>
+            Recycler Login
+          </button>
+        </div>
+       
+      </div>
+
+      <div className="inputs">
+        {isAdminLogin ? (
+          <>
+            <div className="input">
+              <img src={email_icon} alt="" />
+              <input type="email" placeholder="Admin Email" value={adminEmail} onChange={handleAdminEmailChange} />
+            </div>
+
+            <div className="input">
+              <img src={password_icon} alt="" />
+              <input
+                type="password"
+                placeholder="Admin Password"
+                value={adminPassword}
+                onChange={handleAdminPasswordChange}
+              />
+              <img src={password_icon} alt="Toggle Password" className="small-icon" />
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="input">
+              <img src={email_icon} alt="" />
+              <input
+                type="email"
+                placeholder="Email"
+                value={recyclerEmail}
+                onChange={handleRecyclerEmailChange}
+              />
+            </div>
+
+            <div className="input">
+              <img src={password_icon} alt="" />
+              <input
+                type="password"
+                placeholder="Password"
+                value={recyclerPassword}
+                onChange={handleRecyclerPasswordChange}
+              />
+              
+            </div>
+          </>
         )}
       </div>
-      <form onSubmit={onSubmitForm}>
-        <div className="form-group">
-          <label htmlFor="email">Email:</label>
-          <input
-  type="email"
-  name="email"
-  ref={register('email', { required: true, pattern: /^\S+@\S+$/i })}
-/>
 
-          {emailError && (
-            <p className="error">{emailError}</p>
-          )}
+      <div className="forgot-password">
+        Forgot Password?<span>Click Here!</span>
+      </div>
+
+      <div className="submit-container">
+        <div className="submit" onClick={handleSubmit}>
+          Login
         </div>
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            name="password"
-            ref={register('password',{ required: true, minLength: 6 })}
-          />
-          {passwordError && (
-            <p className="error">{passwordError}</p>
-          )}
-        </div>
-        <button type="submit">Login</button>
-      </form>
-      <p>
-        Don't have an account? <a href="/signup">Sign up</a>
-      </p>
+      </div>
     </div>
   );
 };
