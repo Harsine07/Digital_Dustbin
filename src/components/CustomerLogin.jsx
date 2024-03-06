@@ -19,13 +19,13 @@ const CustomerLogin = () => {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    if (action === 'Login' && email === 'Mendal' && password === 'admin@123') {
+    if (action === 'Login' && email === 'Admin' && password === 'admin@123') {
       setLoginMessage('Login successful!');
       setShowModal(true);
       setTimeout(() => {
         setShowModal(false);
         setLoginMessage('');
-        navigate('/another-page');
+        navigate('/Customer_Choice');
       }, 2000);
     } else if (action === 'Register' && email && password) {
       setLoginMessage('Registration successful!');
@@ -132,7 +132,7 @@ const CustomerLogin = () => {
           onClick={() => {
             setAction(action === 'Login' ? 'Register' : 'Login');
             setLoginMessage('');
-            setShowModal(false); // Clear previous login message when switching between Login and Register
+            setShowModal(false); 
           }}
         >
           {action === 'Login' ? 'Register' : 'Login'}
