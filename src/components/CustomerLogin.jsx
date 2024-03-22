@@ -114,7 +114,7 @@ const CustomerLogin = () => {
         <div></div>
       ) : (
         <div className="forgot-password">
-          Forgot Password?<span>Click Here!</span>
+          Forgot Password?<span id="forgot-password-link">Click Here!</span>
         </div>
       )}
 
@@ -132,7 +132,7 @@ const CustomerLogin = () => {
           onClick={() => {
             setAction(action === 'Login' ? 'Register' : 'Login');
             setLoginMessage('');
-            setShowModal(false); 
+            setShowModal(false); // Clear previous login message when switching between Login and Register
           }}
         >
           {action === 'Login' ? 'Register' : 'Login'}

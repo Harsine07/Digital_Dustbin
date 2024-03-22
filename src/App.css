@@ -5,6 +5,7 @@
   align-items: center;
   padding: 2rem;
   justify-content: space-between;
+  z-index: 1000;
 }
 
 .navbar {
@@ -43,7 +44,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  font-weight: 100px;
+  font-weight: 400;
 }
 .logo-image{
   width: 38px; /* Set your desired width */
@@ -76,8 +77,9 @@
 }
 .header {
   text-align: left;
-  margin-right: 800px;
+  margin-right: 20px;
   margin-top: 100px;
+  
 }
 
 

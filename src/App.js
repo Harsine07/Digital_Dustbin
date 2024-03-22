@@ -7,7 +7,7 @@ import Carousel from './components/Header';
 import CustomerLogin from './components/CustomerLogin';
 import RecyclerLogin from './components/RecyclerLogin';
 import CustomerChoice from './components/CustomerChoice';
-import CRUD from './CRUD';
+//import CRUD from './CRUD';
 
 const App = () => {
   const carouselImages = [
@@ -31,7 +31,8 @@ const App = () => {
           <Route path='/RecyclerLogin' element={<RecyclerLogin />} />
           <Route path="/" element={<Carousel images={carouselImages} captions={carouselCaptions} />} />
           <Route path="/Customer_Choice" element={<CustomerChoice/>} />
-          <Route path="/Place_order" element={<CRUD />} />
+          {/* <Route path="/Place_order" element={<CRUD />} /> */}
+          
           
         </Routes>
       </div>
